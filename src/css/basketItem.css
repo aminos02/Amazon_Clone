@@ -1,0 +1,12 @@
+.basket__item {
+  display: flex;
+  padding: 1rem;
+}
+.basket__item__image {
+  max-height: 200px;
+  margin-right: 1rem;
+}
+.checkout__line {
+  color: gray;
+  margin-right: 1rem;
+}
