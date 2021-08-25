@@ -1,10 +1,14 @@
 .basket__item {
   display: flex;
   padding: 1rem;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .basket__item__image {
-  max-height: 200px;
+  height: 180px;
+  width: 180px;
   margin-right: 1rem;
+  object-fit: contain;
 }
 .checkout__line {
   color: gray;

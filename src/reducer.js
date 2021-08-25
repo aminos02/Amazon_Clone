@@ -1,6 +1,9 @@
 export const initialState = {
   basket: [],
 };
+export const getBasketTotalPrice = (basket) =>
+  basket?.reduce((amount, item) => amount + item.price, 0);
+
 const reducer = (state, action) => {
   console.log(action);
   switch (action.type) {
@@ -10,9 +13,11 @@ const reducer = (state, action) => {
         basket: [...state.basket, action.item],
       };
     case "REMOVE__ITEM":
+      state.basket.splice(action.id, 1);
+
       return {
         ...state,
-        basket: state.basket.filter((item) => item.id !== action.id),
+        basket: state.basket,
       };
     default:
       return state;

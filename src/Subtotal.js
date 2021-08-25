@@ -3,10 +3,10 @@ import "./css/subtotal.css";
 import CurrencyFormat from "react-currency-format";
 import { useStateValue } from "./StateProvider";
 import { SportsMmaOutlined } from "@material-ui/icons";
+import { getBasketTotalPrice } from "./reducer";
 function Subtotal() {
   const [{ basket }, dispatch] = useStateValue();
   /*for calcul somme:*/
-  const somme_reducer = (somme, currentValue) => somme + currentValue.price;
   return (
     <div className="subtotal">
       <CurrencyFormat
@@ -24,7 +24,7 @@ function Subtotal() {
           </>
         )}
         decimalScale={2}
-        value={basket.reduce(somme_reducer, 0)}
+        value={getBasketTotalPrice(basket)}
         displayType={"text"}
         thousandSeparator={true}
         prefix={"$"}
