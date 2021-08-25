@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./css/login.css";
+import { auth } from "./firebase";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const history = useHistory();
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -17,6 +18,15 @@ function Login() {
   };
   const signUp = (e) => {
     e.preventDefault();
+    /*  auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((auth) => {
+        if (auth) {
+          console.log(auth);
+          history.pushState("/");
+        }
+      })
+      .catch((error) => alert(error.message));*/
   };
   return (
     <div className="login">
@@ -37,6 +47,7 @@ function Login() {
             type="email"
             placeholder="enter email"
             onChange={handleEmail}
+            required
           />
           <label htmlFor="pass">Password</label>
           <input
@@ -45,6 +56,7 @@ function Login() {
             placeholder="enter a password"
             value={password}
             onChange={handlePassword}
+            required
           />
           <button onClick={signIn} type="submit" className="login__signIn__btn">
             Sign In
