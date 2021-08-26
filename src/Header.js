@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./css/header.css";
 import SearchIcon from "@material-ui/icons/Search";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import { auth } from "./firebase";
 function Header() {
-  const [state, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
+  const toggleSignInSignOut = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
   return (
     <div className="header">
       <Link to="/">
@@ -20,10 +26,14 @@ function Header() {
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
-        <Link to="/login">
+        <Link to={!user && "/login"}>
           <div className="header__option">
-            <span className="header__option1">Hello Guest</span>
-            <span className="header__option2">Sign in</span>
+            <span className="header__option1">
+              Hello {user ? user.email.substr(0, 6) : "GUEST"}
+            </span>
+            <span onClick={toggleSignInSignOut} className="header__option2">
+              {user ? "Sign Out" : "Sign in"}
+            </span>
           </div>
         </Link>
         <div className="header__option">
@@ -38,7 +48,7 @@ function Header() {
           <div className="header__optionBasket">
             <ShoppingCartOutlinedIcon className="header__basketIcon" />
             <span className="header__option2 header__basketCount">
-              {state.basket?.length}
+              {basket?.length}
             </span>
           </div>
         </Link>

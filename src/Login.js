@@ -15,18 +15,25 @@ function Login() {
   };
   const signIn = (e) => {
     e.preventDefault();
+    auth
+      .signInWithEmailAndPassword(email, password)
+      .then((auth) => {
+        if (auth) {
+          history.push("/");
+        }
+      })
+      .catch((error) => alert(error.message));
   };
   const signUp = (e) => {
     e.preventDefault();
-    /*  auth
+    auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         if (auth) {
-          console.log(auth);
-          history.pushState("/");
+          history.push("/");
         }
       })
-      .catch((error) => alert(error.message));*/
+      .catch((error) => alert(error.message));
   };
   return (
     <div className="login">
