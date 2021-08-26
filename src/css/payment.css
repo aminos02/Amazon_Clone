@@ -1,0 +1,27 @@
+.payment__title {
+  text-align: center;
+  margin: 1em 0;
+}
+.payment__title a {
+  text-decoration: none;
+}
+.payment__container {
+  background-color: white;
+}
+.payment__section {
+  padding: 1em;
+
+  display: flex;
+  border-bottom: 2px solid gainsboro;
+}
+.payment__section__title {
+  flex: 0.2;
+  font-size: 1.2em;
+}
+.payment__section__address {
+  padding-left: 1rem;
+}
+.payment__section__address,
+.payment__section__items {
+  flex: 0.8;
+}
