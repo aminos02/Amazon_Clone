@@ -1,0 +1,43 @@
+[debug] [2021-08-27T00:09:42.264Z] ----------------------------------------------------------------------
+[debug] [2021-08-27T00:09:42.272Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\aminos\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start
+[debug] [2021-08-27T00:09:42.274Z] CLI Version:   9.16.5
+[debug] [2021-08-27T00:09:42.274Z] Platform:      win32
+[debug] [2021-08-27T00:09:42.275Z] Node Version:  v14.17.3
+[debug] [2021-08-27T00:09:42.278Z] Time:          Fri Aug 27 2021 02:09:42 GMT+0200 (heure d’été d’Europe centrale)
+[debug] [2021-08-27T00:09:42.279Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-08-27T00:09:42.623Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-08-27T00:09:42.624Z] > authorizing via signed-in user (azzouzamine02@gmail.com)
+[info] i  emulators: Starting emulators: functions, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions, hosting"}}
+[debug] [2021-08-27T00:09:43.731Z] [hub] writing locator at C:\Users\aminos\AppData\Local\Temp\hub-clone-b7977.json
+[warn] !  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, pubsub, storage\u001b[22m"}}
+[info] +  functions: Using node@14 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@14 from host."}}
+[debug] [2021-08-27T00:09:45.288Z] defaultcredentials: writing to file C:\Users\aminos\AppData\Roaming\firebase\azzouzamine02_gmail_com_application_default_credentials.json
+[debug] [2021-08-27T00:09:45.300Z] Setting GAC to C:\Users\aminos\AppData\Roaming\firebase\azzouzamine02_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to C:\\Users\\aminos\\AppData\\Roaming\\firebase\\azzouzamine02_gmail_com_application_default_credentials.json"}}
+[debug] [2021-08-27T00:09:45.308Z] > refreshing access token with scopes: []
+[debug] [2021-08-27T00:09:45.312Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-08-27T00:09:45.686Z] <<< HTTP RESPONSE 200 {"date":"Fri, 27 Aug 2021 00:09:36 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-08-27T00:09:45.812Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-b7977/adminSdkConfig [none]
+[debug] [2021-08-27T00:09:46.682Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-b7977/adminSdkConfig 200
+[debug] [2021-08-27T00:09:46.682Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-b7977/adminSdkConfig {"projectId":"clone-b7977","storageBucket":"clone-b7977.appspot.com"}
+[debug] [2021-08-27T00:09:47.783Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/clone-b7977/sites 
+[debug] [2021-08-27T00:09:49.121Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/clone-b7977/sites 200
+[debug] [2021-08-27T00:09:49.122Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/clone-b7977/sites {"sites":[{"name":"projects/540364279914/sites/clone-b7977","defaultUrl":"https://clone-b7977.web.app","appId":"1:540364279914:web:1b2f67ffbd76c18be7ba13","type":"DEFAULT_SITE"}]}
+[debug] [2021-08-27T00:09:49.124Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/clone-b7977/webApps/1:540364279914:web:1b2f67ffbd76c18be7ba13/config [none]
+[debug] [2021-08-27T00:09:50.551Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/clone-b7977/webApps/1:540364279914:web:1b2f67ffbd76c18be7ba13/config 200
+[debug] [2021-08-27T00:09:50.552Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/clone-b7977/webApps/1:540364279914:web:1b2f67ffbd76c18be7ba13/config {"projectId":"clone-b7977","appId":"1:540364279914:web:1b2f67ffbd76c18be7ba13","storageBucket":"clone-b7977.appspot.com","apiKey":"AIzaSyCx6CyXqZ4D5bcLu275mikHkHPlEUTDwSE","authDomain":"clone-b7977.firebaseapp.com","messagingSenderId":"540364279914","measurementId":"G-JCQP94KCZF"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] +  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2021-08-27T00:09:52.778Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-08-27T00:09:52.780Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2021-08-27T00:09:52.781Z] Starting Emulator UI with command {"binary":"node","args":["C:\\Users\\aminos\\.cache\\firebase\\emulators\\ui-v1.6.2\\server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"C:\\\\Users\\\\aminos\\\\.cache\\\\firebase\\\\emulators\\\\ui-v1.6.2\\\\server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2021-08-27T00:09:53.322Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "E:\MyProjects\amazon_clone\functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"E:\\MyProjects\\amazon_clone\\functions\" for Cloud Functions..."}}
+[debug] [2021-08-27T00:09:53.404Z] [worker-pool] addWorker(~diagnostic~) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(~diagnostic~)"}}
+[debug] [2021-08-27T00:09:53.405Z] [worker-pool] Adding worker with key ~diagnostic~, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key ~diagnostic~, total=1"}}
+[debug] [2021-08-27T00:09:53.406Z] [worker-pool] submitWork(triggerId=) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=)"}}
+[debug] [2021-08-27T00:09:53.407Z] [worker-~diagnostic~-953e0444-02de-47e4-a3b5-ad11f3b423b6]: Assigning socketPath: \\?\pipe\E:\MyProjects\amazon_clone\functions\11124 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-953e0444-02de-47e4-a3b5-ad11f3b423b6]: Assigning socketPath: \\\\?\\pipe\\E:\\MyProjects\\amazon_clone\\functions\\11124"}}
+[debug] [2021-08-27T00:09:53.409Z] [worker-~diagnostic~-953e0444-02de-47e4-a3b5-ad11f3b423b6]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-~diagnostic~-953e0444-02de-47e4-a3b5-ad11f3b423b6]: BUSY"}}

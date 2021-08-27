@@ -25,3 +25,8 @@
 .payment__section__items {
   flex: 0.8;
 }
+
+.payment__details {
+  max-width: 300px;
+  flex: 0.8;
+}
