@@ -21,9 +21,12 @@
     "stripe": "^8.170.0"
   },
   "devDependencies": {
-    "eslint": "^7.6.0",
+    "eslint": "^7.32.0",
     "eslint-config-google": "^0.14.0",
-    "firebase-functions-test": "^0.2.0"
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "firebase-functions-test": "^0.2.0",
+    "prettier": "^2.3.2"
   },
   "private": true
 }

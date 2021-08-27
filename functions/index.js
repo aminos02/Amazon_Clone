@@ -1,5 +1,3 @@
-/* eslint-disable max-len */
-
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
@@ -20,7 +18,6 @@ app.get("/", (request, response) => response.status(200).send("hello world"));
 
 app.post("/payment/create", async (request, response) => {
   const total = request.query.total;
-  console.log("Total Amount is: ", total);
   const paymentIntent = await stripe.paymentIntents.create({
     amount: total,
     currency: "usd",

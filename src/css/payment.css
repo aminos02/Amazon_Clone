@@ -22,11 +22,25 @@
   padding-left: 1rem;
 }
 .payment__section__address,
-.payment__section__items {
+.payment__section__items,
+.payment__details {
   flex: 0.8;
 }
 
-.payment__details {
+.payment__details form {
   max-width: 300px;
-  flex: 0.8;
+}
+.payment__details h3 {
+  margin: 1rem 0;
+}
+.payment__details button {
+  background-color: #f0c14b;
+  border: 1px solid;
+  border-radius: 2px;
+  width: 100%;
+  font-weight: bolder;
+  margin-top: 10px;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  height: 30px;
 }

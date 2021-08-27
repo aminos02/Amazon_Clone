@@ -8,9 +8,10 @@ import BasketItem from "./BasketItem";
 import "./css/payment.css";
 import { getBasketTotalPrice } from "./reducer";
 import { useStateValue } from "./StateProvider";
+import { db } from "./firebase";
 
 function Payment() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
   const stripe = useStripe();
   const elements = useElements();
   const [processing, setProcessing] = useState("");
@@ -30,7 +31,18 @@ function Payment() {
           card: elements.getElement(CardElement),
         },
       })
-      .then((response) => {
+      .then(({ paymentIntent }) => {
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
+        console.log("user ID***: ", user.id);
         setSucceeded(true);
         setError(null);
         setProcessing(false);
@@ -55,8 +67,6 @@ function Payment() {
     };
     getClientSecret();
   }, [basket]);
-
-  console.log("THE SECRET IS   >>>>>", clientSecret);
 
   return (
     <div className="payment">
