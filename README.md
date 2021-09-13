@@ -1,3 +1,24 @@
+# Link Preview: https://clone-b7977.web.app/
+
+##  Home Page :
+
+<img src="https://github.com/aminos02/Amazon_Clone/blob/main/amazon/amazon__home.PNG"/>
+
+##  Basket Page :
+
+<img src="https://github.com/aminos02/Amazon_Clone/blob/main/amazon/amazon__basket.PNG"/>
+
+##  Payment Page :
+
+<img src="https://github.com/aminos02/Amazon_Clone/blob/main/amazon/amazon__payment.PNG"/>
+
+##  Login Page :
+
+<img src="https://github.com/aminos02/Amazon_Clone/blob/main/amazon/amazon__login.PNG"/>
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
