@@ -2,10 +2,10 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Product from "./Product";
 import "./css/home.css";
+const { products } = require("./products.json");
 function Home() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
+  //const [products, setProducts] = useState([]);
+  /*useEffect(() => {
     async function fetchApi() {
       const url = "https://fakestoreapi.com/products/";
       const response = await fetch(url);
@@ -13,7 +13,7 @@ function Home() {
       setProducts(data);
     }
     fetchApi();
-  }, []);
+  }, []);*/
   return (
     <div className="home">
       <div className="home__container">
@@ -25,6 +25,7 @@ function Home() {
         <div className="home__grid">
           {products.map((p) => (
             <Product
+              key={p.id + p.title}
               id={p.id}
               title={p.title}
               price={p.price}

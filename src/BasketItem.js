@@ -14,8 +14,8 @@ function BasketItem({ index, id, title, image, rating, price, hiddenButton }) {
         <div className="stars">
           {Array(rating)
             .fill()
-            .map((item) => (
-              <StarRateIcon />
+            .map((item, index) => (
+              <StarRateIcon key={index} />
             ))}
         </div>
         {!hiddenButton && (

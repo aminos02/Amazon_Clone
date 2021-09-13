@@ -46,8 +46,8 @@ export default function Header() {
       <div className="header__search">
         <select className="header__search__selection">
           <option>All</option>
-          {categories.map((item) => (
-            <option>{item}</option>
+          {categories.map((item, index) => (
+            <option key={index}>{item}</option>
           ))}
         </select>
         <input className="header__searchInput" type="text" />
