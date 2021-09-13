@@ -2,11 +2,21 @@ import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "./css/login.css";
 import { auth } from "./firebase";
+import { useStateValue } from "./StateProvider";
 
 function Login() {
+  const [{}, dispatch] = useStateValue();
+
+  const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
+  const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
+
+  const handleUserName = (e) => {
+    setUserName(e.target.value);
+  };
+
   const handleEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -25,15 +35,25 @@ function Login() {
       .catch((error) => alert(error.message));
   };
   const signUp = (e) => {
-    e.preventDefault();
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        if (auth) {
-          history.push("/");
-        }
-      })
-      .catch((error) => alert(error.message));
+    if (isLogin) {
+      setIsLogin(false);
+      return;
+    } else {
+      e.preventDefault();
+      auth
+        .createUserWithEmailAndPassword(email, password)
+        .then((auth) => {
+          if (auth) {
+            dispatch({
+              type: "SET_USERNAME",
+              username: username,
+            });
+            history.push("/");
+            setIsLogin(true);
+          }
+        })
+        .catch((error) => alert(error.message));
+    }
   };
   return (
     <div className="login">
@@ -45,8 +65,21 @@ function Login() {
         />
       </Link>
       <div className="login__card">
-        <h2>Sign In</h2>
+        <h2>{isLogin ? "Sign In" : "Create Account"}</h2>
         <form className="login__card__form">
+          {!isLogin && (
+            <>
+              <label htmlFor="username">UserName</label>
+              <input
+                value={username}
+                id="username"
+                type="text"
+                placeholder="enter username"
+                onChange={handleUserName}
+                required
+              />
+            </>
+          )}
           <label htmlFor="email">E-mail</label>
           <input
             value={email}
@@ -65,13 +98,19 @@ function Login() {
             onChange={handlePassword}
             required
           />
-          <button onClick={signIn} type="submit" className="login__signIn__btn">
-            Sign In
-          </button>
+          {isLogin && (
+            <button
+              onClick={signIn}
+              type="submit"
+              className="login__signIn__btn"
+            >
+              Sign In
+            </button>
+          )}
           <p>
-            By signing-in you agree to Amazon's Clone App Conditions of Use &
-            Sale. Please see our Privacy Notice, our Cookies Notice and our
-            Interest-Based Ads Notice.
+            By {isLogin ? "signing-in" : "registering"} you agree to Amazon's
+            Clone App Conditions of Use & Sale. Please see our Privacy Notice,
+            our Cookies Notice and our Interest-Based Ads Notice.
           </p>
         </form>
         <button onClick={signUp} className="login__create__btn">

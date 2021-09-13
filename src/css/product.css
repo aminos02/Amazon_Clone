@@ -1,18 +1,26 @@
 .stars {
   color: #f49822;
 }
+:root {
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
 .product {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  margin: 10px;
   padding: 20px;
   width: 100%;
   background-color: white;
   z-index: 1;
   max-height: 400px;
   min-width: 100px;
+  border-radius: 15px;
+  box-shadow: var(--light-shadow);
+}
+.product:hover {
+  box-shadow: var(--dark-shadow);
 }
 .product__info {
   height: 100px;
